@@ -22,13 +22,20 @@
         </style>
 </head>
 <body>
- <audio autoplay="autoplay">
+    <audio id="voice" autoplay>
+
+  <source src="renxi.mp3" type="audio/mpeg">
+
+  您的浏览器不支持 audio 元素。
+
+</audio>
+ <!-- <audio autoplay="autoplay">
   <source src="renxi.mp3" type="audio/mpeg" />
 Your browser does not support the audio element.
 </audio>
 <audio autoplay="autopaly">
 <source src="./renxi.mp3" type="audio/mp3" />
-</audio>
+</audio> -->
 <div id="main">
 <div id="error">本页面采用HTML5编辑，目前您的浏览器无法显示，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器，或者其他游览器的最新版本。</div>
 <div id="wrap">
@@ -56,10 +63,12 @@ Your browser does not support the audio element.
 </div>
 </div>
 <script>
-
-    </script>
+        
+</script>
 <script>
+     var voice = document.getElementById('voice');
 
+       
     (function(){
 
         var canvas = $('#canvas');
@@ -165,7 +174,7 @@ Your browser does not support the audio element.
 
 
         canvas.click(function(e) {
-
+             voice.play();
             var offset = canvas.offset(), x, y;
 
             x = e.pageX - offset.left;
